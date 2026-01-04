@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/titaniumnetwork-dev/Ultraviolet-Static/main/public/uv.png" height="250"></p>
+<p align="center"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtJdMIvXT9WYL3Qv5njidRD5nLZDmrkROQTUcb4iwUg&s" height="250"></p>
 
 <h1 align="center">Unblocky the unblocker</h1>
 
