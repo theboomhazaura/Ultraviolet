@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Docs</title> <link rel="icon" type="image/x-icon" href="https://ssl.gstatic.com/docs/documents/images/kix-favicon7.ico">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 { color: #00ff88; text-shadow: 0 0 10px #00ff88; }
+        .search-container { width: 80%; max-width: 600px; }
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            font-size: 1.1em;
+            background: #1e1e1e;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+        .games-grid {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .game-card {
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            border: 1px solid #333;
+        }
+        .game-card:hover { transform: scale(1.05); border-color: #00ff88; }
+        .panic-info { position: fixed; bottom: 10px; font-size: 0.8em; color: #555; }
+    </style>
+</head>
+<body>
+
+    <h1>Sigma Unblocker v1.0</h1>
+    
+    <div class="search-container">
+        <input type="text" id="url-input" placeholder="Enter URL or Search 'brrr brrr patipim'...">
+    </div>
+
+    <div class="games-grid">
+        <div class="game-card" onclick="launchGame('https://geometrydash.io')">Geometry Dash</div>
+        <div class="game-card" onclick="launchGame('https://subwaysurfers.com')">Subway Surfers</div>
+        <div class="game-card" onclick="launchGame('https://minecraft.net')">Minecraft</div>
+    </div>
+
+    <div class="panic-info">Press <b>"~" (Tilde)</b> to Panic Redirect to Canvas.</div>
+
+    <script>
+        // 1. PANIC KEY (The "Tralalao Tralala" Defense)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === '~') {
+                window.location.href = 'https://canvas.instructure.com'; // Change to your school portal
+            }
+        });
+
+        // 2. LAUNCHER LOGIC
+        function launchGame(url) {
+            // This is where your unblocker engine (index.cjs) comes in
+            // For now, it just opens the link, but you can route it through your proxy
+            alert("Launching through proxy engine: " + url);
+            // window.location.href = "/service/" + btoa(url); // Typical proxy routing
+        }
+
+        // 3. TAB CLOAKING
+        // Keeps the tab looking like Google Docs even if you switch back and forth
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = "Google Docs";
+            }
+        });
+    </script>
+</body>
+</html>
